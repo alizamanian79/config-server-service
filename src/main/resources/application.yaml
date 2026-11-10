@@ -13,12 +13,11 @@ spring:
           search-paths:
             - '{application}-config'
 
+server:
+  port: 8888
+
 management:
   endpoints:
     web:
       exposure:
         include: health,info
-
-
-server:
-  port: 8888
