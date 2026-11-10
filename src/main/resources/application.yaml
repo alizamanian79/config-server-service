@@ -6,10 +6,10 @@ spring:
     config:
       server:
         git:
-          uri: ${SPRING_CLOUD_CONFIG_SERVER_GIT_URL}
-          username: ${SPRING_CLOUD_CONFIG_SERVER_GIT_USERNAME}
-          password: ${SPRING_CLOUD_CONFIG_SERVER_GIT_PASSWORD}
-          default-label: ${SPRING_CLOUD_CONFIG_SERVER_GIT_BRANCH}
+          uri: ${SPRING_CLOUD_CONFIG_SERVER_GIT_URL:https://github.com/alizamanian79/sodor24-cloud.git}
+          username: ${SPRING_CLOUD_CONFIG_SERVER_GIT_USERNAME:alizamanian79}
+          password: ${SPRING_CLOUD_CONFIG_SERVER_GIT_PASSWORD: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}
+          default-label: ${SPRING_CLOUD_CONFIG_SERVER_GIT_BRANCH:master}
           search-paths:
             - '{application}-config'
 
@@ -21,3 +21,8 @@ management:
     web:
       exposure:
         include: health,info
+
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
+    org.eclipse.jgit: DEBUG
