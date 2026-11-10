@@ -1,12 +1,12 @@
 spring:
-  
+
   cloud:
     config:
       server:
         git:
-          uri: ${SPRING_CLOUD_CONFIG_SERVER_GIT_URL:https://github.com/alizamanian79/sodor24-config-repo.git}
-          username: ${SPRING_CLOUD_CONFIG_SERVER_GIT_USERNAME:alizamanian79}
-          password: ${SPRING_CLOUD_CONFIG_SERVER_GIT_PASSWORD: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}
+          uri: ${SPRING_CLOUD_CONFIG_SERVER_GIT_URL}
+          username: ${SPRING_CLOUD_CONFIG_SERVER_GIT_USERNAME}
+          password: ${SPRING_CLOUD_CONFIG_SERVER_GIT_PASSWORD}
           search-paths:
             - '{application}-config'
 
