@@ -2,13 +2,14 @@ spring:
   application:
     name: config-server
 
-
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/YOUR_USERNAME/sodor24-config.git
-          default-label: main
+          uri: ${SPRING_CLOUD_CONFIG_SERVER_GIT_URL}
+          username: ${SPRING_CLOUD_CONFIG_SERVER_GIT_USERNAME}
+          password: ${SPRING_CLOUD_CONFIG_SERVER_GIT_PASSWORD}
+          default-label: ${SPRING_CLOUD_CONFIG_SERVER_GIT_BRANCH}
           search-paths:
             - '{application}-config'
 
@@ -17,3 +18,7 @@ management:
     web:
       exposure:
         include: health,info
+
+
+server:
+  port: 8888
