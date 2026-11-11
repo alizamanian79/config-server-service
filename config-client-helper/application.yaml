@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: service-name
+
+  profiles:
+    active:
+    - dev
+    
+  
+  config:
+    import: "configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
+    
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,refresh
