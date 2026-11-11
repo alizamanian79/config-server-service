@@ -3,18 +3,8 @@ services:
   config-server:
     image: alizamanian/config-server-service:v1.0.0
     container_name: config-server
-
     env_file:
       - .env
-
     ports:
-      - "${SERVER_PORT:-8888}:${SERVER_PORT:-8888}"
-
+      - "8888:8888"
     restart: unless-stopped
-
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${SERVER_PORT:-8888}/actuator/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
-      start_period: 40s
